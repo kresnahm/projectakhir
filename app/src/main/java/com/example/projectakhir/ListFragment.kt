@@ -13,7 +13,6 @@ class ListFragment :Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val displayView = inflater.inflate(R.layout.list_fragment, container, false)
-
         return displayView
     }
 }
