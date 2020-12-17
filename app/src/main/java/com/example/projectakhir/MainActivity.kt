@@ -9,7 +9,7 @@ import com.google.firebase.FirebaseApp
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-    val splashTimeOut = 4000
+    val splashTimeOut = 1000
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         FirebaseApp.initializeApp(this)

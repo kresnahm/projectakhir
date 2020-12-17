@@ -35,12 +35,12 @@ class CarAdapter(
     class CarViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         fun bindItem(cars: Car) {
             view.apply {
-                val cc = "CC  : ${cars.kapasitasMesin}"
-                val kursi = "Jumlah Kursi   : ${cars.jumlahKursi}"
-                val merkM = "Merk : ${cars.merkMobil}"
-                val nama = "Nama : ${cars.namaMobil}"
-                val plat_nomor = "${cars.platNomor}"
-                val transmisiM = "Transmisi : ${cars.jenisTransmisi}"
+                val cc = "CC  : ${cars.cc}"
+                val kursi = "Jumlah Kursi   : ${cars.kursi}"
+                val merkM = "Merk : ${cars.merk}"
+                val nama = "Nama : ${cars.nama}"
+                val plat_nomor = "${cars.plat_nomor}"
+                val transmisiM = "Transmisi : ${cars.transmisi}"
 
                 plat_no.text = plat_nomor
                 namaM.text = nama
