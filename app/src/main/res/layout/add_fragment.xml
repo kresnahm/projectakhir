@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/layot"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@drawable/rectangle_searrchbar"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="60dp"
+            android:layout_height="42dp"
+
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/logo2" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="256dp"
+        android:layout_below="@+id/layot">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tvPlatNomor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Plat Nomor"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+
+            <EditText
+                android:id="@+id/etPlatNomor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text=""
+                />
+
+            <TextView
+                android:id="@+id/tvNamaMobil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama Mobil"
+                android:layout_gravity="center"
+                android:gravity="center" />
+
+            <EditText
+                android:id="@+id/etNamaMobil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/tvMerkMobil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Merk Mobil"
+                android:layout_gravity="center"
+                android:gravity="center" />
+
+            <EditText
+                android:id="@+id/etMerkMobil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/tvKapasitasMesin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kapasitas Mesin (dalam cc)"
+                android:layout_gravity="center"
+                android:gravity="center" />
+
+            <EditText
+                android:id="@+id/etKapasitasMesin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/tvJumlahKursi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jumlah Kursi"
+                android:layout_gravity="center"
+                android:gravity="center" />
+
+            <EditText
+                android:id="@+id/etJumlahKursi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"/>
+
+            <TextView
+                android:id="@+id/tvTransmisi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jenis Transmisi"
+                android:layout_gravity="center"
+                android:gravity="center" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/rbAutomatic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Automatic"/>
+
+                    <RadioButton
+                        android:id="@+id/rbManual"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Manual"/>
+
+                </RadioGroup>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>
