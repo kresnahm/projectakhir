@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ed1b2e"
+    android:background="#a2a0a5"
     tools:context=".MainActivity">
 
     <ImageView
@@ -18,6 +18,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo1"/>
+        app:srcCompat="@drawable/logo2"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
