@@ -2,7 +2,9 @@ package com.example.projectakhir
 
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeActivity: AppCompatActivity() {
@@ -19,20 +21,18 @@ class HomeActivity: AppCompatActivity() {
         ).commit()
     }
     private val navListener: BottomNavigationView.OnNavigationItemSelectedListener =
-        object : OnNavigationItemSelectedListener() {
-            fun onNavigationItemSelected(@NonNull menuItem: MenuItem): Boolean {
-                var selectedFragment: Fragment? = null
-                when (menuItem.itemId) {
-                    R.id.nav_home -> selectedFragment = HomeFragment()
-                    R.id.nav_courses -> selectedFragment = CoursesFragment()
-                    R.id.nav_profile -> selectedFragment = ProfileFragment()
-                    R.id.nav_event -> selectedFragment = EventsFragment()
-                }
+        BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
+            var selectedFragment: Fragment? = null
+            when (menuItem.itemId) {
+                R.id.nav_list -> selectedFragment = ListFragment()
+                R.id.nav_add -> selectedFragment = AddFragment()
+            }
+            if (selectedFragment != null) {
                 supportFragmentManager.beginTransaction().replace(
                     R.id.fragment_container,
                     selectedFragment
                 ).commit()
-                return true
             }
+            true
         }
 }
