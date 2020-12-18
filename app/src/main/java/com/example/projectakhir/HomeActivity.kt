@@ -72,13 +72,16 @@ class HomeActivity: AppCompatActivity() {
         db.collection("Car").get()
             .addOnSuccessListener { result ->
                 for (document in result){
-                    Log.d("[DATA]", "Datanya : ${document.data}")
+                    Log.d("[DATA]", "Datanya : ${document.id} => ${document.data}")
                 }
             }
             .addOnFailureListener { exception ->
                 Log.w("[ERROR]", "Error getting documents : $exception")
             }
     }
+}
+
+
 
 //    private fun moveIntent(){
 //        startActivity(Intent(this, LoginActivity::class.java))
@@ -88,7 +91,6 @@ class HomeActivity: AppCompatActivity() {
 //    private fun showMessage(message: String) {
 //        Toast.makeText(applicationContext, message, Toast.LENGTH_SHORT).show()
 //    }
-}
 
 //    override fun onCreate(savedInstanceState: Bundle?) {
 //        super.onCreate(savedInstanceState)

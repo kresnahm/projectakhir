@@ -3,9 +3,11 @@ package com.example.projectakhir
 import Car
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
@@ -27,9 +29,19 @@ class CarAdapter(
 
     override fun onBindViewHolder(viewHolder: CarViewHolder, position: Int, cars: Car) {
         viewHolder.bindItem(cars)
-//        viewHolder.itemView.setOnClickListener {
-//            showDialogMenu(cars)
-//        }
+        viewHolder.itemView.apply {
+            findViewById<ImageView>(R.id.delete).setOnClickListener {
+                Log.d("[DELETE]", "MASUK")
+                deleteByPlatNomor(cars)
+            }
+
+            findViewById<ImageView>(R.id.edit).setOnClickListener {
+                Log.d("[EDIT]", "MASUK")
+                context.startActivity(Intent(context, EditDataMobilActivity::class.java).apply {
+                    putExtra(EditDataMobilActivity.EXTRA_DATA, cars)
+                })
+            }
+        }
     }
 
     class CarViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
@@ -50,6 +62,13 @@ class CarAdapter(
                 transmisi.text = transmisiM
             }
         }
+    }
+
+    private fun deleteByPlatNomor(cars: Car) {
+        collection.document(cars.plat_nomor)
+                .delete()
+                .addOnCompleteListener { Toast.makeText(context, "Data mobil berhasil terhapus", Toast.LENGTH_SHORT).show() }
+                .addOnFailureListener { Toast.makeText(context, "Gagal menghapus data mobil", Toast.LENGTH_SHORT).show() }
     }
 
 //    private fun showDialogMenu(cars: Car) {
