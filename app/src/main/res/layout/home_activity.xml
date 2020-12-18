@@ -43,5 +43,16 @@
             android:contentDescription="tambah_data"
             android:src="@drawable/ic_add_24" />
 
+        <ImageView
+            android:id="@+id/logOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_margin="20dp"
+
+            android:contentDescription="tambah_data"
+            android:src="@drawable/ic_baseline_power_settings_new_24"
+            app:backgroundTint="@color/colorPrimary" />
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </RelativeLayout>

@@ -39,6 +39,17 @@
             android:padding="10dp">
 
             <TextView
+                android:id="@+id/tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit Data Mobil"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textSize="30dp"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginBottom="15dp"
+                android:gravity="center"/>
+            <TextView
                 android:id="@+id/tvPlatNomor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -51,7 +62,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
+                android:gravity="center"
+                android:inputType="none"
+                android:enabled="false"
                 android:text=""
                 />
 
@@ -68,6 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:gravity="center"
                 android:inputType="textPersonName"
                 android:text="" />
 
@@ -84,6 +98,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:gravity="center"
                 android:inputType="textPersonName"
                 android:text="" />
 
@@ -100,6 +115,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:gravity="center"
                 android:inputType="number"
                 android:text="" />
 
@@ -116,6 +132,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:gravity="center"
                 android:inputType="number"/>
 
             <TextView

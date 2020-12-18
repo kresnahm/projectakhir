@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.annotation.NonNull
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,7 +20,8 @@ import kotlinx.android.synthetic.main.home_activity.*
 import kotlinx.android.synthetic.main.list_fragment.*
 import kotlinx.android.synthetic.main.list_fragment.cList
 
-class HomeActivity: AppCompatActivity() {
+
+class HomeActivity : AppCompatActivity() {
     private lateinit var mAdapter: FirestoreRecyclerAdapter<Car, CarAdapter.CarViewHolder>
     private val mFirestore = FirebaseFirestore.getInstance()
     private val mCarCollection = mFirestore.collection("Car")
@@ -55,6 +57,9 @@ class HomeActivity: AppCompatActivity() {
             val intent = Intent(this, AddCarActivity2::class.java)
             startActivity(intent)
         }
+        logOut.setOnClickListener {
+            logoutDialog()
+        }
     }
 
     private fun setupAdapter() {
@@ -71,7 +76,7 @@ class HomeActivity: AppCompatActivity() {
     private fun readData(db: FirebaseFirestore) {
         db.collection("Car").get()
             .addOnSuccessListener { result ->
-                for (document in result){
+                for (document in result) {
                     Log.d("[DATA]", "Datanya : ${document.id} => ${document.data}")
                 }
             }
@@ -79,8 +84,25 @@ class HomeActivity: AppCompatActivity() {
                 Log.w("[ERROR]", "Error getting documents : $exception")
             }
     }
-}
 
+    private fun logoutDialog() {
+        val builder =
+            AlertDialog.Builder(this)
+                .setTitle("Logout")
+                .setMessage("Apakah anda yakin ingin keluar?")
+                .setPositiveButton("Yes") { dialog, which ->
+                    logout()
+                }
+                .setNegativeButton("Cancel", null)
+        builder.create().show()
+    }
+
+    private fun logout() {
+        var out = Intent(this, LoginActivity::class.java)
+        startActivity(out)
+        finish()
+    }
+}
 
 
 //    private fun moveIntent(){

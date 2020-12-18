@@ -32,7 +32,7 @@
             android:src="@drawable/logo" />
 
         <EditText
-            android:id="@+id/emailRegistEditText"
+            android:id="@+id/emailLogin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="15dp"
@@ -43,7 +43,7 @@
             android:textSize="15dp" />
 
         <EditText
-            android:id="@+id/passRegistEditText"
+            android:id="@+id/passLogin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="65dp"
